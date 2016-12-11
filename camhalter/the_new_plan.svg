@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg3521"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="the_new_plan.svg">
+  <defs
+     id="defs3523" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.98994949"
+     inkscape:cx="493.39607"
+     inkscape:cy="430.32592"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1138"
+     inkscape:window-x="2560"
+     inkscape:window-y="268"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata3526">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#000000;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"
+       d="m 268.17044,145.98291 -250.933612,250.93364 35.0586,35.0585 0,364.3008 277.744212,0 0,-336.8496 336.8476,0 0,-277.74022 -363.3769,-0.12109 z"
+       id="rect3373"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccccccccc"
+       inkscape:export-xdpi="61.540001"
+       inkscape:export-ydpi="61.540001" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.99999994px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 274.31807,209.47318 389.7638,0"
+       id="path3439"
+       inkscape:connector-curvature="0"
+       inkscape:export-xdpi="61.540001"
+       inkscape:export-ydpi="61.540001" />
+    <rect
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#00ff00;stroke-width:3.00000024;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"
+       id="rect3446"
+       width="39.519684"
+       height="349.55905"
+       x="295.38541"
+       y="-84.83622"
+       transform="matrix(0.70710678,0.70710678,-0.70710678,0.70710678,0,0)"
+       inkscape:export-xdpi="61.540001"
+       inkscape:export-ydpi="61.540001" />
+    <path
+       style="color:#000000;display:inline;overflow:visible;visibility:visible;opacity:1;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#ff5555;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;enable-background:accumulate"
+       d="M 664.83867,289.54898 296.45957,190.55403 133.27386,788.94108 m 531.56481,-449.2425 -604.552713,83.4386 48.083303,373.2519"
+       id="rect3448"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccc"
+       inkscape:export-xdpi="61.540001"
+       inkscape:export-ydpi="61.540001" />
+    <text
+       sodipodi:linespacing="100%"
+       id="text3465"
+       y="637.34467"
+       x="-412.59866"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:100%;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';text-align:start;letter-spacing:-2.40999985px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"
+       transform="matrix(0,-1,1,0,0,0)"
+       inkscape:export-xdpi="61.540001"
+       inkscape:export-ydpi="61.540001"><tspan
+         y="637.34467"
+         x="-413.80365"
+         sodipodi:role="line"
+         id="tspan3477"
+         style="text-align:center;text-anchor:middle">^^^^^</tspan><tspan
+         y="657.34467"
+         x="-413.80365"
+         sodipodi:role="line"
+         style="text-align:center;text-anchor:middle"
+         id="tspan3481">&lt; LED &gt;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:100%;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';text-align:start;letter-spacing:-2.40999985px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="669.31805"
+       y="318.47318"
+       id="text3469"
+       sodipodi:linespacing="100%"
+       inkscape:export-xdpi="61.540001"
+       inkscape:export-ydpi="61.540001"><tspan
+         sodipodi:role="line"
+         x="669.31805"
+         y="318.47318"
+         id="tspan3473">&lt;-Webcam</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:100%;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';text-align:start;letter-spacing:-2.40999985px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="280.47922"
+       y="766.47314"
+       id="text3483"
+       sodipodi:linespacing="100%"
+       inkscape:export-xdpi="61.540001"
+       inkscape:export-ydpi="61.540001"><tspan
+         style="text-align:center;text-anchor:middle"
+         id="tspan3485"
+         sodipodi:role="line"
+         x="279.2742"
+         y="766.47314">^^^^^</tspan><tspan
+         id="tspan3487"
+         style="text-align:center;text-anchor:middle"
+         sodipodi:role="line"
+         x="279.2742"
+         y="786.47314">&lt; LED &gt;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:100%;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';text-align:start;letter-spacing:-2.40999985px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="476.31808"
+       y="204.47316"
+       id="text3489"
+       sodipodi:linespacing="100%"
+       inkscape:export-xdpi="61.540001"
+       inkscape:export-ydpi="61.540001"><tspan
+         sodipodi:role="line"
+         id="tspan3491"
+         x="476.31808"
+         y="204.47316"
+         style="font-size:12.5px">minimal Abstand Brennweite 10cm</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:20px;line-height:100%;font-family:Ubuntu;-inkscape-font-specification:'Ubuntu, Normal';text-align:start;letter-spacing:-2.40999985px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#00ff00;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-124.74588"
+       y="319.85757"
+       id="text3493"
+       sodipodi:linespacing="100%"
+       transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)"
+       inkscape:export-xdpi="61.540001"
+       inkscape:export-ydpi="61.540001"><tspan
+         sodipodi:role="line"
+         id="tspan3495"
+         x="-124.74588"
+         y="319.85757">Petrischale</tspan></text>
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.95476844;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 661.64992,181.61071 221.2234,0"
+       id="path3359"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>
