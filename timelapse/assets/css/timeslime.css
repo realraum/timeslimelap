@@ -1,0 +1,40 @@
+body {
+  font-family: "Droid Sans", Helvetica, Arial, Sans;
+  color:black;
+  font-size:22px;
+  padding:0;
+  margin:0;
+  background-color: #D0D0AF;
+  overflow: hidden;
+}
+
+
+div.windowfloat {
+  display:block;
+  float:left;
+  background-color: white;
+  border-top-left-radius:10px;
+  border-top-right-radius:10px;
+  margin-top:10px;
+  margin-left:10px;
+  margin-right:0px;
+  overflow:hidden;
+}
+
+p.topic {
+  width: 100%;
+  margin-bottom:5px;
+  margin-top:0px;
+  margin-left:0px;
+  margin-right:0px;
+  font-weight: bold;
+  font-variant:small-caps;
+  font-size:100%;
+  color: white;
+  text-align:center;
+  background-color: #272727;
+}
+
+img.imgframesmall {
+	width:640px;
+}
