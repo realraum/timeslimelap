@@ -1,0 +1,11 @@
+
+[Unit]
+Description=Shot a timelapse image
+ConditionExists=/dev/ttyUSB0
+ConditionExists=/dev/video0
+Requires=catleddev.service
+After=catleddev.service
+
+[Service]
+Type=simple
+ExecStart=/home/ubuntu/timelapse/record-frame_jpg-src.sh

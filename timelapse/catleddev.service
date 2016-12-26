@@ -1,0 +1,10 @@
+[Unit]
+Description=Handle LedDev StdOut
+ConditionExists=/dev/ttyUSB0
+
+[Service]
+Type=simple
+ExecStartPre=/bin/stty -F /dev/ttyUSB0 57600 raw min 1 time 1 brkint
+ExecStartPre=/bin/sh -c "echo -n 010 >/dev/ttyUSB0"
+ExecStart=/bin/cat /dev/ttyUSB0
+
