@@ -26,6 +26,10 @@ header h1 {
     margin: 0;
 }
 
+header h2 {
+    text-align: center;
+}
+
 @media (max-width: 970px) {
     header, .topbar {
         font-size: 12px;
