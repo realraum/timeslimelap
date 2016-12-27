@@ -48,6 +48,7 @@ server {
 
 	location ~ /timepics\d* {
                autoindex on;
+               expires max;
         }
 
 	location /websock {

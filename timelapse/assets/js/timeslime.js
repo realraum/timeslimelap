@@ -2,7 +2,7 @@ var $r3jq = jQuery.noConflict();
 
 var timelapsedata={
   path:"/timepics/",
-  imglist:["frame_000000.jpg","frame_000001.jpg","frame_000002.jpg","frame_000003.jpg"],
+  imglist:["frame_000000.jpg"],
   interval_ms:1000,
 }
 
@@ -80,7 +80,13 @@ $r3jq(document).ready(function()
   $r3jq("#button-timelapse-play").click(playTimeLapse);
   $r3jq("#button-timelapse-next").click(nextTimeLapse);
   $r3jq("#button-timelapse-prev").click(prevTimeLapse);
+
   displayRecentImage();
+
+  ws.registerContext("update", function(newdata) {timelapsedata=Object.assign(timelapsedata,newdata); displayRecentImage();});
+  console.log('ws://'+window.location.hostname+":"+window.location.port+'/websock')
+  ws.open('ws://'+window.location.hostname+":"+window.location.port+'/websock')
+
   displayNextTimeLapse();
   playTimeLapse();
 

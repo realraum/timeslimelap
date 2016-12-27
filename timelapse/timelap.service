@@ -3,6 +3,7 @@
 Description=Shot a timelapse image
 ConditionExists=/dev/ttyUSB0
 ConditionExists=/dev/video0
+ConditionFileIsExecutable=/home/ubuntu/websocktrigger
 Requires=catleddev.service
 After=catleddev.service
 

@@ -51,6 +51,7 @@ function takePicture {
   local imgheight=720
   mogrify -distort Perspective "250,80 0,0 1520,74 ${imgwidth},0 123,954 0,${imgheight}, 1640,956 ${imgwidth},${imgheight}" -crop "${imgwidth}x${imgheight}+0+0" "$outfilename"
   mogrify -pointsize 50 -fill orange -undercolor '#00000080' -gravity SouthEast -annotate +0+0 "$((imgnum*intervall))s"  "$outfilename"
+  [[ -x /home/ubuntu/websocktrigger ]] && /home/ubuntu/websocktrigger -socketpath /run/updatetrigger.socket
 }
 
 
