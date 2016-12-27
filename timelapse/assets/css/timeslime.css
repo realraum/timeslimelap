@@ -1,40 +1,45 @@
-body {
-  font-family: "Droid Sans", Helvetica, Arial, Sans;
-  color:black;
-  font-size:22px;
-  padding:0;
-  margin:0;
-  background-color: #D0D0AF;
-  overflow: hidden;
+.topbar {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 8em;
+    top: 1em;
+    background-color: black;
 }
 
-
-div.windowfloat {
-  display:block;
-  float:left;
-  background-color: white;
-  border-top-left-radius:10px;
-  border-top-right-radius:10px;
-  margin-top:10px;
-  margin-left:10px;
-  margin-right:0px;
-  overflow:hidden;
+header {
+    padding-top: 1em;
+    padding-bottom: 3em;
 }
 
-p.topic {
-  width: 100%;
-  margin-bottom:5px;
-  margin-top:0px;
-  margin-left:0px;
-  margin-right:0px;
-  font-weight: bold;
-  font-variant:small-caps;
-  font-size:100%;
-  color: white;
-  text-align:center;
-  background-color: #272727;
+header img {
+    position: absolute;
+    width: 9em;
+    margin-top: -0.4em;
 }
 
-img.imgframesmall {
-	width:640px;
+header h1 {
+    text-align: center;
+    padding: 0.41em 0;
+    color: white;
+    font-size: 4em;
+    margin: 0;
+}
+
+header h2 {
+    text-align: center;
+}
+
+@media (max-width: 970px) {
+    header, .topbar {
+        font-size: 12px;
+    }
+}
+
+.panels img {
+    width: 100%;
+}
+
+.timelapsectrl {
+    margin: -6px 0;
 }
