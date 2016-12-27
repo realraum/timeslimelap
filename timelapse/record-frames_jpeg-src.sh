@@ -2,6 +2,8 @@
 setopt extendedglob histsubstpattern magicequalsubst cshnullglob braceccl
 
 GST_LAUNCH=gst-launch-1.0
+RPCCLIENT=/home/ubuntu/websocktrigger
+RPCSOCKPATH=/tmp/updatetrigger.socket
 
 export leddev=/dev/ttyUSB0
 export v4ldev=( /dev/video?([-1]) )
@@ -18,14 +20,13 @@ if [[ ${newestfiles} == (#b)${outdir}/frame_(<->).jpg ]] then
   imgnum=$((match+1))
 fi
 
-stty -F $leddev 57600 raw min 1 time 1 brkint
-sleep 0.1
-cat $leddev >| /dev/null < /dev/null &
-local CATPID=$!
-echo $CATPID
-trap "kill -9 $CATPID" EXIT
-sleep 0.5
-echo -n "010" > $leddev
+#stty -F $leddev 57600 raw min 1 time 1 brkint
+#sleep 0.1
+#cat $leddev >| /dev/null < /dev/null &
+#local CATPID=$!
+#echo $CATPID
+#trap "kill -9 $CATPID" EXIT
+#sleep 0.5
 
 function takePicture {
   TRAPEXIT() {
@@ -34,12 +35,13 @@ function takePicture {
   local dir=$1
   local imgnum=$2
   local outfilename="${dir}/frame_$(print -f "%06d" imgnum).jpg"
-  echo -n 1 > $leddev
+  [[ -x $RPCCLIENT ]] && $RPCCLIENT -socketpath $RPCSOCKPATH -led on
+  #echo -n 1 > $leddev
   sleep 5 # give cam time to adjust
   $GST_LAUNCH  v4l2src device=$v4ldev num-buffers=40 ! jpegenc ! image/jpeg,width={ 1920, 1280, 1024, 864, 640 },height={ 1080, 768, 720, 480 },pixel-aspect-ratio=1/1 ! filesink location="$outfilename"
   ##with text before distort
   #$GST_LAUNCH  v4l2src device=$v4ldev num-buffers=40 !  textoverlay text="$((imgnum*intervall))s" line-alignment=0 halignment=2 ! jpegenc ! image/jpeg,width={ 1920, 1280, 1024, 864, 640 },height={ 1080, 768, 720, 480 },pixel-aspect-ratio=1/1 ! filesink location="$outfilename"
-  echo -n 0 > $leddev
+  [[ -x $RPCCLIENT ]] && $RPCCLIENT -socketpath $RPCSOCKPATH -led off
   ## Creative Live Camera, 640x480
   #mogrify -distort Perspective '40,36 0,0 680,50 640,0 141,401 0,480 556,409 640,480 ' "$outfilename"
 
@@ -47,11 +49,11 @@ function takePicture {
   #mogrify -distort Perspective '330,0 0,0 1480,0 1080,0 0,1070 0,1080, 1950,1070 1080,1080' -crop 1080x1080+0+0 "$outfilename"
 
   ## Microsoft Camera 1920x1080 for Labyrinth
-  local imgwidth=1240
+  local imgwidth=1280
   local imgheight=720
-  mogrify -distort Perspective "250,80 0,0 1520,74 ${imgwidth},0 123,954 0,${imgheight}, 1640,956 ${imgwidth},${imgheight}" -crop "${imgwidth}x${imgheight}+0+0" "$outfilename"
+  mogrify -distort Perspective "336,231 0,0 1500,236 ${imgwidth},0 220,1072 0,${imgheight}, 1655,1047 ${imgwidth},${imgheight}" -crop "${imgwidth}x${imgheight}+0+0" "$outfilename"
   mogrify -pointsize 50 -fill orange -undercolor '#00000080' -gravity SouthEast -annotate +0+0 "$((imgnum*intervall))s"  "$outfilename"
-  [[ -x /home/ubuntu/websocktrigger ]] && /home/ubuntu/websocktrigger -socketpath /tmp/updatetrigger.socket
+  [[ -x $RPCCLIENT ]] && $RPCCLIENT -socketpath $RPCSOCKPATH -updatefilelist
 }
 
 

@@ -19,6 +19,7 @@ const (
 	PS_JSONTOALL      = "jsontoall"
 	PS_TRIGGERUPDATE  = "triggerupdate"
 	PS_REQLATESTFILES = "getlastestfiles"
+	PS_SERIAL         = "toserial"
 )
 
 var (
@@ -27,6 +28,7 @@ var (
 	ImageURI_             string
 	RPCSocketPath_        string
 	TimeLapseIntervallMS_ uint64
+	LedFlashTTYDev_       string
 )
 
 func init() {
@@ -35,6 +37,7 @@ func init() {
 	flag.StringVar(&DebugFlags_, "debug", "", "List of DebugFlags separated by ,")
 	flag.StringVar(&RPCSocketPath_, "socketpath", "/tmp/updatetrigger.socket", "List of DebugFlags separated by ,")
 	flag.Uint64Var(&TimeLapseIntervallMS_, "tlintvms", 750, "ms between frames")
+	flag.StringVar(&LedFlashTTYDev_, "leddev", "/dev/ttyUSB0", "Led Flash Serial Device")
 }
 
 func main() {
@@ -51,10 +54,30 @@ func main() {
 	LogMain_.Print("Exiting..")
 }
 
+func GoForwardToSerial(ps *pubsub.PubSub, serwr_chan chan string) {
+	shutdown_chan := ps.SubOnce("shutdown")
+	serpub_chan := ps.Sub(PS_SERIAL)
+	for {
+		select {
+		case <-shutdown_chan:
+			ps.Unsub(serpub_chan, PS_SERIAL)
+			return
+		case toser := <-serpub_chan:
+			serwr_chan <- toser.(string)
+		}
+	}
+}
+
 func MainThatReallyIsTheRealMain() {
 	//prepare clean shutdown
 	defer ps.Pub(true, "shutdown")
 
+	serwr_chan, _, err := OpenAndHandleSerial(LedFlashTTYDev_, 57600)
+	if err != nil {
+		LogMain_.Printf("OpenAndHandleSerial Error: %s", err)
+	} else {
+		go GoForwardToSerial(ps, serwr_chan)
+	}
 	go StartRPCServer(ps, RPCSocketPath_) //let frontendd connect to me
 	go GoWaitOnTrigger(ps)
 	go RunMartini(ps)

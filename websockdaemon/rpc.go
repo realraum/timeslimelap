@@ -18,6 +18,15 @@ func (r *RPCStruct) TriggerUpdate(arg bool, reply *bool) error {
 	return nil
 }
 
+func (r *RPCStruct) LEDSwitch(onoff bool, reply *bool) error {
+	if onoff {
+		r.ps.Pub("1", PS_SERIAL)
+	} else {
+		r.ps.Pub("0", PS_SERIAL)
+	}
+	return nil
+}
+
 func StartRPCServer(ps *pubsub.PubSub, socketpath string) {
 	r := &RPCStruct{ps}
 	rpc.Register(r)
