@@ -9,7 +9,7 @@ GST_LAUNCH=gst-launch-1.0
 
 function takePicture {
   local outfilename="./test.jpg"
-  $GST_LAUNCH  v4l2src device=$v4ldev num-buffers=40 ! jpegenc ! image/jpeg,width={ 1920, 1280, 1024, 864, 640 },height={ 1080, 768, 720, 480 },pixel-aspect-ratio=1/1 ! filesink location="$outfilename"
+  $GST_LAUNCH  v4l2src device=$v4ldev num-buffers=40 brightness=$((2147483647)) ! jpegenc ! image/jpeg,width={ 1920, 1280, 1024, 864, 640 },height={ 1080, 768, 720, 480 },pixel-aspect-ratio=1/1 ! filesink location="$outfilename"
 }
 
 

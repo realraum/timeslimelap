@@ -30,7 +30,7 @@ function takePicture {
   [[ -x $RPCCLIENT ]] && $RPCCLIENT -socketpath $RPCSOCKPATH -led on &>/dev/null
   #echo -n 1 > $leddev
   sleep 8 # give cam time to adjust
-  $GST_LAUNCH  v4l2src device=$v4ldev num-buffers=40 ! jpegenc ! image/jpeg,width={ 1920, 1280, 1024, 864, 640 },height={ 1080, 768, 720, 480 },pixel-aspect-ratio=1/1 ! filesink location="$outfilename"
+  $GST_LAUNCH  v4l2src device=$v4ldev num-buffers=40 brightness=$((2147483647)) ! jpegenc ! image/jpeg,width={ 1920, 1280, 1024, 864, 640 },height={ 1080, 768, 720, 480 },pixel-aspect-ratio=1/1 ! filesink location="$outfilename"
   ##with text before distort
   #$GST_LAUNCH  v4l2src device=$v4ldev num-buffers=40 !  textoverlay text="$((imgnum*intervall))s" line-alignment=0 halignment=2 ! jpegenc ! image/jpeg,width={ 1920, 1280, 1024, 864, 640 },height={ 1080, 768, 720, 480 },pixel-aspect-ratio=1/1 ! filesink location="$outfilename"
   [[ -x $RPCCLIENT ]] && $RPCCLIENT -socketpath $RPCSOCKPATH -led off &>/dev/null
@@ -48,7 +48,7 @@ function takePicture {
   [[ -f $timestartfile ]] || touch $timestartfile
   local secelapsed=$(($(date +%s) - $(date -r $timestartfile +%s)))
   mogrify -distort Perspective "340,180 0,0 1542,161 ${imgwidth},0 236,1040 0,${imgheight}, 1680,1017 ${imgwidth},${imgheight}" -crop "${imgwidth}x${imgheight}+0+0" "$outfilename"
-  mogrify -pointsize 50 -fill orange -undercolor '#00000080' -gravity SouthEast -annotate +0+0 "${secelapsed}s"  "$outfilename"
+  mogrify -equalize -pointsize 50 -fill orange -undercolor '#00000080' -gravity SouthEast -annotate +0+0 "${secelapsed}s"  "$outfilename"
   [[ -x $RPCCLIENT ]] && $RPCCLIENT -socketpath $RPCSOCKPATH -updatefilelist
 }
 
