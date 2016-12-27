@@ -3,5 +3,5 @@ Description=Tell webclients about list of frames
 
 [Service]
 Type=simple
-ExecStartPre=/bin/rm -f /run/updatetrigger.socket
-ExecStart=/home/ubuntu/websockdaemon -imgpath /home/ubuntu/timelapse/timepics -socketpath /run/updatetrigger.socket
+ExecStartPre=/bin/rm -f /tmp/updatetrigger.socket
+ExecStart=/home/ubuntu/websockdaemon -imgpath /home/ubuntu/timelapse/timepics -socketpath /tmp/updatetrigger.socket

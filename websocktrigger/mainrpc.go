@@ -15,7 +15,7 @@ var (
 const DEFAULT_TUER_DOORCMD_SOCKETPATH string = "/run/tuer/door_cmd.unixpacket"
 
 func init() {
-	flag.StringVar(&socket_path_, "socketpath", "/run/updatetrigger.socket", "rpc command socket path")
+	flag.StringVar(&socket_path_, "socketpath", "/tmp/updatetrigger.socket", "rpc command socket path")
 	flag.Parse()
 }
 

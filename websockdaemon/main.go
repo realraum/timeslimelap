@@ -33,7 +33,7 @@ func init() {
 	flag.StringVar(&ImagePath_, "imgpath", "./timepics/", "Path to Image")
 	flag.StringVar(&ImageURI_, "imguri", "/timepics/", "URI where images are exported")
 	flag.StringVar(&DebugFlags_, "debug", "", "List of DebugFlags separated by ,")
-	flag.StringVar(&RPCSocketPath_, "socketpath", "/run/updatetrigger.socket", "List of DebugFlags separated by ,")
+	flag.StringVar(&RPCSocketPath_, "socketpath", "/tmp/updatetrigger.socket", "List of DebugFlags separated by ,")
 	flag.Uint64Var(&TimeLapseIntervallMS_, "tlintvms", 750, "ms between frames")
 }
 
