@@ -37,7 +37,7 @@ function takePicture {
   local outfilename="${dir}/frame_$(print -f "%06d" imgnum).jpg"
   [[ -x $RPCCLIENT ]] && $RPCCLIENT -socketpath $RPCSOCKPATH -led on
   #echo -n 1 > $leddev
-  sleep 5 # give cam time to adjust
+  sleep 8 # give cam time to adjust
   $GST_LAUNCH  v4l2src device=$v4ldev num-buffers=40 ! jpegenc ! image/jpeg,width={ 1920, 1280, 1024, 864, 640 },height={ 1080, 768, 720, 480 },pixel-aspect-ratio=1/1 ! filesink location="$outfilename"
   ##with text before distort
   #$GST_LAUNCH  v4l2src device=$v4ldev num-buffers=40 !  textoverlay text="$((imgnum*intervall))s" line-alignment=0 halignment=2 ! jpegenc ! image/jpeg,width={ 1920, 1280, 1024, 864, 640 },height={ 1080, 768, 720, 480 },pixel-aspect-ratio=1/1 ! filesink location="$outfilename"
@@ -51,7 +51,7 @@ function takePicture {
   ## Microsoft Camera 1920x1080 for Labyrinth
   local imgwidth=1280
   local imgheight=720
-  mogrify -distort Perspective "340,180 0,0 1542,161 ${imgwidth},0 236,1040 0,${imgheight}, 1680,1200 ${imgwidth},${imgheight}" -crop "${imgwidth}x${imgheight}+0+0" "$outfilename"
+  mogrify -distort Perspective "340,180 0,0 1542,161 ${imgwidth},0 236,1040 0,${imgheight}, 1680,1017 ${imgwidth},${imgheight}" -crop "${imgwidth}x${imgheight}+0+0" "$outfilename"
   mogrify -pointsize 50 -fill orange -undercolor '#00000080' -gravity SouthEast -annotate +0+0 "$((imgnum*intervall))s"  "$outfilename"
   [[ -x $RPCCLIENT ]] && $RPCCLIENT -socketpath $RPCSOCKPATH -updatefilelist
 }
