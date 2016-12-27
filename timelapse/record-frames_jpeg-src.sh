@@ -51,7 +51,7 @@ function takePicture {
   ## Microsoft Camera 1920x1080 for Labyrinth
   local imgwidth=1280
   local imgheight=720
-  mogrify -distort Perspective "336,231 0,0 1500,236 ${imgwidth},0 220,1072 0,${imgheight}, 1655,1047 ${imgwidth},${imgheight}" -crop "${imgwidth}x${imgheight}+0+0" "$outfilename"
+  mogrify -distort Perspective "340,180 0,0 1542,161 ${imgwidth},0 236,1040 0,${imgheight}, 1680,1200 ${imgwidth},${imgheight}" -crop "${imgwidth}x${imgheight}+0+0" "$outfilename"
   mogrify -pointsize 50 -fill orange -undercolor '#00000080' -gravity SouthEast -annotate +0+0 "$((imgnum*intervall))s"  "$outfilename"
   [[ -x $RPCCLIENT ]] && $RPCCLIENT -socketpath $RPCSOCKPATH -updatefilelist
 }

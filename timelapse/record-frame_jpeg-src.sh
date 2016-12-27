@@ -21,19 +21,19 @@ fi
 
 function takePicture {
   TRAPEXIT() {
-     [[ -x $RPCCLIENT ]] && $RPCCLIENT -socketpath $RPCSOCKPATH -led off
+     [[ -x $RPCCLIENT ]] && $RPCCLIENT -socketpath $RPCSOCKPATH -led off &>/dev/null
      #echo -n 0 > $leddev
   }
   local dir=$1
   local imgnum=$2
   local outfilename="${dir}/frame_$(print -f "%06d" imgnum).jpg"
-  [[ -x $RPCCLIENT ]] && $RPCCLIENT -socketpath $RPCSOCKPATH -led on
+  [[ -x $RPCCLIENT ]] && $RPCCLIENT -socketpath $RPCSOCKPATH -led on &>/dev/null
   #echo -n 1 > $leddev
   sleep 5 # give cam time to adjust
   $GST_LAUNCH  v4l2src device=$v4ldev num-buffers=40 ! jpegenc ! image/jpeg,width={ 1920, 1280, 1024, 864, 640 },height={ 1080, 768, 720, 480 },pixel-aspect-ratio=1/1 ! filesink location="$outfilename"
   ##with text before distort
   #$GST_LAUNCH  v4l2src device=$v4ldev num-buffers=40 !  textoverlay text="$((imgnum*intervall))s" line-alignment=0 halignment=2 ! jpegenc ! image/jpeg,width={ 1920, 1280, 1024, 864, 640 },height={ 1080, 768, 720, 480 },pixel-aspect-ratio=1/1 ! filesink location="$outfilename"
-  [[ -x $RPCCLIENT ]] && $RPCCLIENT -socketpath $RPCSOCKPATH -led off
+  [[ -x $RPCCLIENT ]] && $RPCCLIENT -socketpath $RPCSOCKPATH -led off &>/dev/null
   # echo -n 0 > $leddev
   
   ## Creative Live Camera, 640x480
@@ -47,7 +47,7 @@ function takePicture {
   local imgheight=720
   [[ -f $timestartfile ]] || touch $timestartfile
   local secelapsed=$(($(date +%s) - $(date -r $timestartfile +%s)))
-  mogrify -distort Perspective "336,231 0,0 1500,236 ${imgwidth},0 220,1072 0,${imgheight}, 1655,1047 ${imgwidth},${imgheight}" -crop "${imgwidth}x${imgheight}+0+0" "$outfilename"
+  mogrify -distort Perspective "340,180 0,0 1542,161 ${imgwidth},0 236,1040 0,${imgheight}, 1680,1200 ${imgwidth},${imgheight}" -crop "${imgwidth}x${imgheight}+0+0" "$outfilename"
   mogrify -pointsize 50 -fill orange -undercolor '#00000080' -gravity SouthEast -annotate +0+0 "${secelapsed}s"  "$outfilename"
   [[ -x $RPCCLIENT ]] && $RPCCLIENT -socketpath $RPCSOCKPATH -updatefilelist
 }
