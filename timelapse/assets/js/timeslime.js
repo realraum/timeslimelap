@@ -83,7 +83,7 @@ $r3jq(document).ready(function()
 
   displayRecentImage();
 
-  ws.registerContext("update", function(newdata) {timelapsedata=Object.assign(timelapsedata,newdata); displayRecentImage();});
+  ws.registerContext("update", function(newdata) {timelapsedata=newdata; displayRecentImage();});
   console.log('ws://'+window.location.hostname+":"+window.location.port+'/websock')
   ws.open('ws://'+window.location.hostname+":"+window.location.port+'/websock')
 
