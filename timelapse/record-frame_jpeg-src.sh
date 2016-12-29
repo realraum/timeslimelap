@@ -43,7 +43,7 @@ function takePicture {
   #mogrify -distort Perspective '330,0 0,0 1480,0 1080,0 0,1070 0,1080, 1950,1070 1080,1080' -crop 1080x1080+0+0 "$outfilename"
 
   ## Microsoft Camera 1920x1080 for Labyrinth
-  local imgwidth=1240
+  local imgwidth=1280
   local imgheight=720
   [[ -f $timestartfile ]] || touch $timestartfile
   local secelapsed=$(($(date +%s) - $(date -r $timestartfile +%s)))

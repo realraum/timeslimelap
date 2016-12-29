@@ -52,7 +52,7 @@ function takePicture {
   #mogrify -distort Perspective '330,0 0,0 1480,0 1080,0 0,1070 0,1080, 1950,1070 1080,1080' -crop 1080x1080+0+0 "$outfilename"
 
   ## Microsoft Camera 1920x1080 for Labyrinth
-  local imgwidth=1240
+  local imgwidth=1280
   local imgheight=720
   timeout --foreground -k 45s 30s mogrify -distort Perspective "340,180 0,0 1542,161 ${imgwidth},0 236,1040 0,${imgheight}, 1680,1017 ${imgwidth},${imgheight}" -crop "${imgwidth}x${imgheight}+0+0" "$outfilename"
   timeout --foreground -k 45s 30s mogrify -equalize -pointsize 50 -fill orange -undercolor '#00000080' -gravity SouthEast -annotate +0+0 "${secelapsed}s"  "$outfilename"

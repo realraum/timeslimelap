@@ -4,4 +4,5 @@ ConditionFileIsExecutable=/home/ubuntu/websocktrigger
 
 [Service]
 Type=simple
-ExecStart=/home/ubuntu/timelapse/record-frame_jpg-src.sh
+WorkingDirectory=/home/ubuntu/timelapse/
+ExecStart=/home/ubuntu/timelapse/record-frame_jpeg-src.sh
