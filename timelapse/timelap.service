@@ -1,8 +1,6 @@
 [Unit]
 Description=Shot a timelapse image
 ConditionFileIsExecutable=/home/ubuntu/websocktrigger
-Requires=catleddev.service
-After=catleddev.service
 
 [Service]
 Type=simple
