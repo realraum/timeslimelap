@@ -1,7 +1,5 @@
 [Unit]
 Description=peridically shot timelapse images
-#Requires=catleddev.service
-#After=catleddev.service
 
 [Timer]
 OnActiveSec=30s
